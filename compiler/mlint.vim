@@ -1,12 +1,13 @@
 " Vim compiler file
-" Compiler:         Matlab mlint code checker
-" Maintainer:       Fabrice Guy <fabrice.guy at gmail dot com>
-" Latest Revision:  2008 Oct 16
-" Comment:          mlint messages are either 
-"                   - L x (C y): message (where x and y are line number and
-"                   column number)
-"                   - L x (C y-z): message (where x is the line number, y and
-"                   z the column numbers where the error comes from)
+" Compiler: 		Matlab mlint code checker
+" Creator: 		Fabrice Guy <fabrice.guy at gmail dot com>
+" Maintainer: 		Jesse Codling <jclds139 at gmail dot com>
+" Latest Revision: 	2020 Mar 26
+" Comment: 		mlint messages are either 
+" 			- L x (C y): message (where x and y are line number and
+" 			column number)
+" 			- L x (C y-z): message (where x is the line number, y and
+" 			z the column numbers where the error comes from)
 
 
 if exists("current_compiler")
@@ -19,7 +20,7 @@ if exists(":CompilerSet") != 2		" older Vim always used :setlocal
 endif
 
 " pipe through sed to prepend filename:
-CompilerSet makeprg=mlint\ -id\ %\ \\\|&\ sed\ 's/^/%:/'
+CompilerSet makeprg=mlint\ -id\ %\ \\\|&\ sed\ 's?^?%:?'
 
 " errorformat originally from syntastic
 CompilerSet errorformat=

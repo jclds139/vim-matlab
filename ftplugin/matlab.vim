@@ -1,8 +1,9 @@
 " Vim filetype plugin file
 " Language:	matlab
-" Maintainer:	Fabrice Guy <fabrice.guy at gmail dot com>
-" Last Changed: 2009 Nov 23 - Automatic insertion of comment header when new
-" comment inserted
+" Creator:	Fabrice Guy <fabrice.guy at gmail dot com>
+" Maintainer: 	Jesse Codling <jclds139 at gmail dot com>
+" Last Changed: 2020 Mar 26 - Automatic setting of compiler and textwidth for
+" 	code checking and width compatibility with MATLAB
 
 if exists("b:did_ftplugin")
   finish
@@ -33,3 +34,6 @@ let b:undo_ftplugin = "setlocal suffixesadd< suffixes< "
       \ . "| unlet! b:match_words"
 
 let &cpo = s:save_cpo
+
+setlocal textwidth=80
+compiler mlint
