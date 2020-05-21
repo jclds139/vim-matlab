@@ -2,8 +2,8 @@
 " Language:	matlab
 " Creator:	Fabrice Guy <fabrice.guy at gmail dot com>
 " Maintainer: 	Jesse Codling <jclds139 at gmail dot com>
-" Last Changed: 2020 Mar 26 - Automatic setting of compiler and textwidth for
-" 	code checking and width compatibility with MATLAB
+" Last Changed: 2020 May 21 - set tab and shift width for compatibility with
+" the MATLAB editor
 
 if exists("b:did_ftplugin")
   finish
@@ -37,3 +37,5 @@ let &cpo = s:save_cpo
 
 setlocal textwidth=80
 compiler mlint
+setlocal tabstop=4
+setlocal shiftwidth=4
