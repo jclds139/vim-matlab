@@ -20,7 +20,7 @@ if exists(":CompilerSet") != 2		" older Vim always used :setlocal
 endif
 
 " pipe through sed to prepend filename:
-CompilerSet makeprg=mlint\ -id\ %\ \\\|&\ sed\ 's?^?%:?'
+CompilerSet makeprg=mlint\ -id\ \"%\"\ \\\|&\ sed\ 's?^?%:?'
 
 " errorformat originally from syntastic
 CompilerSet errorformat=
